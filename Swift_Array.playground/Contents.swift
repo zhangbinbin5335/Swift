@@ -44,6 +44,54 @@ for (index, value) in arrayOfInts.enumerated() {
 //创建空数组，并初始化值
 var cells = [String](repeating: "xx", count: 5)
 
+// 字典
+var info:Dictionary<String, Int> = Dictionary()
+info["Jack"] = 4
+info["Tom"] = 3
+
+info.isEmpty
+info.count
+info
+
+//遍历
+for key in info.keys{
+    print("key",key)
+}
+
+for value in info.values {
+    print("value=",value)
+}
+
+for (key, value) in info {
+    print("key =",key,"value =",value)
+}
+
+info.removeValue(forKey: "Tom")
+
+//元组 Tuples
+//一组有序的元素，可以通过名字或位置访问
+
+//():用来定义一个元组
+var coordinates = (54.2667, 8.4833)
+
+let (lat, lon) = coordinates //lat = 54.2667,lon = 8.4833
+
+//_ to indicate fields that we don’t care about
+let (latt, _) = coordinates //_:用来指明我们不在乎这块
+print("Lattitude is \(lat)")
+print("Lattitude is \(latt)")
+
+//元组可以是不同类型的元素
+var response = (code: 502, message: "Bad Gateway")//(Int, String)类型
+
+//通过位置访问元素
+response.0
+response.1
+
+//通过名字访问元素
+response.code
+response.message
+
 
 
 
