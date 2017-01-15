@@ -4,3 +4,5 @@
 ## Swift ConstantsVariables 常量、变量
 ## Swift Array 数组的一些常用方法介绍
 ## Swift ControlFlow 一些流程控制的方法，大部分和c一样
+## Swift Optionals 可选类型，可以用nil初始化的类型
+
