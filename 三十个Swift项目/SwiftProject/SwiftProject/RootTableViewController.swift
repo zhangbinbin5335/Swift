@@ -19,7 +19,10 @@ class RootTableViewController: UITableViewController {
         
         dataArray = [
                         ["title":"Simple Stop Watch",
-                         "class":"SimpleStopWatchVC"]]
+                         "class":"SimpleStopWatchVC"],
+                        ["title":"Custom Font",
+                         "class":"CustomFontVC"]
+        ]
     }
 
     override func didReceiveMemoryWarning() {

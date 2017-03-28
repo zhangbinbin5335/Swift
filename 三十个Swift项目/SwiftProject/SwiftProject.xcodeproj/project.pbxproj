@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4320C2FC1E8A9E2300A81C86 /* CustomFontVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C2FA1E8A9E2300A81C86 /* CustomFontVC.swift */; };
+		4320C3001E8AA06D00A81C86 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C2FF1E8AA06D00A81C86 /* UIView+Frame.swift */; };
+		4320C3041E8AA46400A81C86 /* BitCheese10(sRB).TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4320C3021E8AA28800A81C86 /* BitCheese10(sRB).TTF */; };
+		4320C3051E8AA46400A81C86 /* UniTortred.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4320C3031E8AA29500A81C86 /* UniTortred.ttf */; };
 		439A81161E8A3BB100515B70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A81151E8A3BB100515B70 /* AppDelegate.swift */; };
 		439A811B1E8A3BB100515B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 439A81191E8A3BB100515B70 /* Main.storyboard */; };
 		439A811D1E8A3BB100515B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439A811C1E8A3BB100515B70 /* Assets.xcassets */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4320C2FA1E8A9E2300A81C86 /* CustomFontVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFontVC.swift; sourceTree = "<group>"; };
+		4320C2FF1E8AA06D00A81C86 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
+		4320C3021E8AA28800A81C86 /* BitCheese10(sRB).TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BitCheese10(sRB).TTF"; sourceTree = "<group>"; };
+		4320C3031E8AA29500A81C86 /* UniTortred.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UniTortred.ttf; sourceTree = "<group>"; };
 		439A81121E8A3BB100515B70 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439A81151E8A3BB100515B70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		439A811A1E8A3BB100515B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,6 +45,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4320C2FE1E8A9F1200A81C86 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				4320C2FF1E8AA06D00A81C86 /* UIView+Frame.swift */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		4320C3011E8AA27B00A81C86 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4320C3021E8AA28800A81C86 /* BitCheese10(sRB).TTF */,
+				4320C3031E8AA29500A81C86 /* UniTortred.ttf */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		439A81091E8A3BB100515B70 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +83,8 @@
 			children = (
 				439A81151E8A3BB100515B70 /* AppDelegate.swift */,
 				439A81271E8A3C4800515B70 /* RootTableViewController.swift */,
+				4320C3011E8AA27B00A81C86 /* Resource */,
+				4320C2FE1E8A9F1200A81C86 /* Category */,
 				439A81291E8A3FA400515B70 /* 30Project */,
 				439A81191E8A3BB100515B70 /* Main.storyboard */,
 				439A811C1E8A3BB100515B70 /* Assets.xcassets */,
@@ -71,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				439A812A1E8A3FD700515B70 /* SimpleStopWatchVC.swift */,
+				4320C2FA1E8A9E2300A81C86 /* CustomFontVC.swift */,
 			);
 			name = 30Project;
 			sourceTree = "<group>";
@@ -135,6 +163,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4320C3041E8AA46400A81C86 /* BitCheese10(sRB).TTF in Resources */,
+				4320C3051E8AA46400A81C86 /* UniTortred.ttf in Resources */,
 				439A81201E8A3BB100515B70 /* LaunchScreen.storyboard in Resources */,
 				439A811D1E8A3BB100515B70 /* Assets.xcassets in Resources */,
 				439A811B1E8A3BB100515B70 /* Main.storyboard in Resources */,
@@ -148,6 +178,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4320C2FC1E8A9E2300A81C86 /* CustomFontVC.swift in Sources */,
+				4320C3001E8AA06D00A81C86 /* UIView+Frame.swift in Sources */,
 				439A81161E8A3BB100515B70 /* AppDelegate.swift in Sources */,
 				439A81281E8A3C4800515B70 /* RootTableViewController.swift in Sources */,
 				439A812B1E8A3FD700515B70 /* SimpleStopWatchVC.swift in Sources */,
@@ -312,6 +344,7 @@
 				439A81261E8A3BB100515B70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

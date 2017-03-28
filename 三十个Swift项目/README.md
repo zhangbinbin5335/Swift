@@ -17,4 +17,15 @@
  // 添加选择子
  #selector(buttonClick(button:)    
  ```
- #### 2. Custom Font
+ #### 2. Custom Font  
+ * 将字体文件.ttf添加到工程中
+ * 在info.plist配置Fonts provided by application
+ * 找出字体名，就可以使用了  
+ 
+ // 遍历出所以字体
+ for family in UIFont.familyNames {
+ 
+ for font in UIFont.fontNames(forFamilyName: family) {
+ print(font)
+ }
+ }
