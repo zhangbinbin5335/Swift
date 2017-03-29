@@ -26,7 +26,9 @@ UICollectionViewDelegateFlowLayout{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        // 会隐藏整个navigationController pop不回去了
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.navigationBar.isHidden = true
         
         let backgroundImageView = UIImageView.init(frame: self.view.bounds)
         backgroundImageView.image = #imageLiteral(resourceName: "1")
