@@ -8,6 +8,9 @@
 
 import UIKit
 
+private let kInfoKeyTitle = "title"
+private let kInfoKeyClass = "class"
+
 class RootTableViewController: UITableViewController {
     
     var dataArray : Array<Dictionary<String, String>> = []
@@ -18,10 +21,14 @@ class RootTableViewController: UITableViewController {
         self.title = "30个Swift项目"
         
         dataArray = [
-                        ["title":"Simple Stop Watch",
-                         "class":"SimpleStopWatchVC"],
-                        ["title":"Custom Font",
-                         "class":"CustomFontVC"]
+                        [kInfoKeyTitle : "Simple Stop Watch",
+                         kInfoKeyClass : "SimpleStopWatchVC"],
+                        
+                        [kInfoKeyTitle : "Custom Font",
+                         kInfoKeyClass : "CustomFontVC"],
+                        
+                        [kInfoKeyTitle : "Carousel Effect",
+                         kInfoKeyClass : "CarouselEffectVC"]
         ]
     }
 
@@ -46,7 +53,7 @@ class RootTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rootReuseIdentifier", for: indexPath)
 
-        cell.textLabel?.text = dataArray[indexPath.row]["title"]
+        cell.textLabel?.text = dataArray[indexPath.row][kInfoKeyTitle]
 
         return cell
     }
@@ -57,9 +64,10 @@ class RootTableViewController: UITableViewController {
         
         // 从info.plist读取namespace
         let nameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
-        let className : String = nameSpace + "." +  dataArray[indexPath.row]["class"]!
+        let className : String = nameSpace + "." +  dataArray[indexPath.row][kInfoKeyClass]!
         let classVC : AnyClass = NSClassFromString(className)!
         let vc = classVC.alloc() as! UIViewController
+        vc.title = dataArray[indexPath.row][kInfoKeyTitle]!
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
