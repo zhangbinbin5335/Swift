@@ -36,5 +36,8 @@
  `UIVisualEffectView`的使用，效果体现在它后的view上。
  * 使用结构体定义数据结构  
  
+ #### 4. UIRefreshControl
+ * UIRefreshControl为UITableViewController定制的，固定样式。
+ * 用户上啦会出发UIControlEventValueChanged事件，可以在这里做数据处理。
  
  

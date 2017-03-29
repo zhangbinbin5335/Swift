@@ -18,6 +18,7 @@
 		439A81281E8A3C4800515B70 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A81271E8A3C4800515B70 /* RootTableViewController.swift */; };
 		439A812B1E8A3FD700515B70 /* SimpleStopWatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A812A1E8A3FD700515B70 /* SimpleStopWatchVC.swift */; };
 		43CA4F3C1E8B9C590040BD5D /* CarouselEffectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CA4F3B1E8B9C590040BD5D /* CarouselEffectVC.swift */; };
+		43CA4F5C1E8BBBEA0040BD5D /* RefreshVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CA4F5B1E8BBBEA0040BD5D /* RefreshVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		439A81271E8A3C4800515B70 /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		439A812A1E8A3FD700515B70 /* SimpleStopWatchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleStopWatchVC.swift; sourceTree = "<group>"; };
 		43CA4F3B1E8B9C590040BD5D /* CarouselEffectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselEffectVC.swift; sourceTree = "<group>"; };
+		43CA4F5B1E8BBBEA0040BD5D /* RefreshVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				439A812A1E8A3FD700515B70 /* SimpleStopWatchVC.swift */,
 				4320C2FA1E8A9E2300A81C86 /* CustomFontVC.swift */,
 				43CA4F3B1E8B9C590040BD5D /* CarouselEffectVC.swift */,
+				43CA4F5B1E8BBBEA0040BD5D /* RefreshVC.swift */,
 			);
 			name = 30Project;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				4320C2FC1E8A9E2300A81C86 /* CustomFontVC.swift in Sources */,
 				43CA4F3C1E8B9C590040BD5D /* CarouselEffectVC.swift in Sources */,
 				4320C3001E8AA06D00A81C86 /* UIView+Frame.swift in Sources */,
+				43CA4F5C1E8BBBEA0040BD5D /* RefreshVC.swift in Sources */,
 				439A81161E8A3BB100515B70 /* AppDelegate.swift in Sources */,
 				439A81281E8A3C4800515B70 /* RootTableViewController.swift in Sources */,
 				439A812B1E8A3FD700515B70 /* SimpleStopWatchVC.swift in Sources */,
@@ -309,6 +313,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GBF9E4J865;
 				INFOPLIST_FILE = SwiftProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = binbintyou.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -322,6 +327,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GBF9E4J865;
 				INFOPLIST_FILE = SwiftProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = binbintyou.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";

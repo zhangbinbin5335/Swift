@@ -28,7 +28,10 @@ class RootTableViewController: UITableViewController {
                          kInfoKeyClass : "CustomFontVC"],
                         
                         [kInfoKeyTitle : "Carousel Effect",
-                         kInfoKeyClass : "CarouselEffectVC"]
+                         kInfoKeyClass : "CarouselEffectVC"],
+                        
+                        [kInfoKeyTitle : "Refresh",
+                         kInfoKeyClass : "RefreshVC"]
         ]
     }
 

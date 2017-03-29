@@ -22,13 +22,22 @@ UICollectionViewDelegateFlowLayout{
     
     var collectionView : UICollectionView! // 自动解析
     var dataArray : Array<DetailInfo>!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // 会隐藏整个navigationController pop不回去了
+        //        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 会隐藏整个navigationController pop不回去了
-//        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.navigationController?.navigationBar.isHidden = true
         
         let backgroundImageView = UIImageView.init(frame: self.view.bounds)
         backgroundImageView.image = #imageLiteral(resourceName: "1")
