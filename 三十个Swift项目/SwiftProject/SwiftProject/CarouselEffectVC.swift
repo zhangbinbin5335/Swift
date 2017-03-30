@@ -55,7 +55,7 @@ UICollectionViewDelegateFlowLayout{
                      DetailInfo.init(description: "", image: #imageLiteral(resourceName: "2")),
                      DetailInfo.init(description: "", image: #imageLiteral(resourceName: "5"))]
         
-        let collectionViewLayout : UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
+        let collectionViewLayout : CustomCollectionViewLayout = CustomCollectionViewLayout.init()
         
         collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         collectionViewLayout.minimumLineSpacing = kItemSpace
@@ -92,19 +92,108 @@ UICollectionViewDelegateFlowLayout{
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
         
+        
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: collectionView.width - kItemSpace * 3, height: collectionView.height)
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize.init(width: kItemSpace, height: collectionView.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize.init(width: kItemSpace, height: collectionView.height)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize.init(width: collectionView.width - kItemSpace * 3, height: collectionView.height)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+//        return CGSize.init(width: kItemSpace, height: collectionView.height)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        return CGSize.init(width: kItemSpace, height: collectionView.height)
+//    }
     
 }
+
+class CustomCollectionViewLayout: UICollectionViewFlowLayout {
+    
+    var width : CGFloat {
+        get{
+            let collectionView = self.collectionView
+            let width = ((collectionView?.width)! - 4*kItemSpace)
+            return width
+        }
+    }
+    
+    // 实现自定义布局需要继承UICollectionViewLayout，同时还要重载下面的三个方法
+    
+    // 内容区域总大小，不是可见区域
+    override var collectionViewContentSize: CGSize {
+        let collectionView = self.collectionView
+        
+        let contentWidth =  self.width * CGFloat((collectionView?.numberOfItems(inSection: 0))!)
+        let height = collectionView?.height
+        
+        return CGSize.init(width: contentWidth + kItemSpace, height: height!)
+    }
+    
+    // 所有单元格位置属性
+    override func layoutAttributesForElements(in rect: CGRect)
+        -> [UICollectionViewLayoutAttributes]? {
+        
+            var attributesArray = [UICollectionViewLayoutAttributes]()
+            let cellCount = self.collectionView!.numberOfItems(inSection: 0)
+            for i in 0..<cellCount {
+                let indexPath =  IndexPath(item:i, section:0)
+                let attributes =  self.layoutAttributesForItem(at: indexPath)
+                attributesArray.append(attributes!)
+            }
+            return attributesArray
+    }
+    
+    // 这个方法返回每个单元格的位置和大小
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        
+        let collectionView = self.collectionView
+        
+        let width : CGFloat = self.width
+        let x : CGFloat = width * CGFloat(indexPath.item) + kItemSpace
+        let height : CGFloat = (collectionView?.height)!
+
+        let layoutAttributes = UICollectionViewLayoutAttributes(forCellWith:indexPath)
+        layoutAttributes.frame = CGRect.init(x: x, y: 0, width: width - kItemSpace, height: height)
+        
+        return layoutAttributes
+    }
+    
+    // 滚动时实时修改
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        return true
+    }
+    
+    // 预计结束时候的位置
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        
+        var targetContentOffset = proposedContentOffset
+        
+//        print(ceil(targetContentOffset.x / self.width))
+        targetContentOffset.x = ceil(targetContentOffset.x / self.width) * self.width - kItemSpace
+
+        return targetContentOffset
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
