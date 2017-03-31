@@ -14,6 +14,7 @@ struct DetailInfo {
 }
 
 private let kItemSpace : CGFloat = 20
+let kDescription = "子言慕雨，启伞避之。\n子言好阳，寻荫拒之。\n子言喜风，阖户离之。\n子言偕老，吾所畏之。"
 
 class CarouselEffectVC: UIViewController,
 UICollectionViewDelegate,
@@ -41,7 +42,7 @@ UICollectionViewDelegateFlowLayout{
         
         let backgroundImageView = UIImageView.init(frame: self.view.bounds)
         backgroundImageView.image = #imageLiteral(resourceName: "1")
-        self.view.addSubview(backgroundImageView)
+//        self.view.addSubview(backgroundImageView)
         
         // 毛玻璃效果
         let visualEffectView = UIVisualEffectView.init(frame: self.view.bounds)
@@ -49,11 +50,11 @@ UICollectionViewDelegateFlowLayout{
         visualEffectView.effect = UIBlurEffect.init(style: UIBlurEffectStyle.light)
         self.view.addSubview(visualEffectView)
         
-        dataArray = [DetailInfo.init(description: "", image: #imageLiteral(resourceName: "3")),
-                     DetailInfo.init(description: "", image: #imageLiteral(resourceName: "6")),
-                     DetailInfo.init(description: "", image: #imageLiteral(resourceName: "4")),
-                     DetailInfo.init(description: "", image: #imageLiteral(resourceName: "2")),
-                     DetailInfo.init(description: "", image: #imageLiteral(resourceName: "5"))]
+        dataArray = [DetailInfo.init(description: kDescription, image: #imageLiteral(resourceName: "3")),
+                     DetailInfo.init(description: kDescription, image: #imageLiteral(resourceName: "6")),
+                     DetailInfo.init(description: kDescription, image: #imageLiteral(resourceName: "4")),
+                     DetailInfo.init(description: kDescription, image: #imageLiteral(resourceName: "2")),
+                     DetailInfo.init(description: kDescription, image: #imageLiteral(resourceName: "5"))]
         
         let collectionViewLayout : CustomCollectionViewLayout = CustomCollectionViewLayout.init()
         
@@ -92,6 +93,13 @@ UICollectionViewDelegateFlowLayout{
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
         
+        let label = UILabel.init(frame: CGRect.init(x: 0, y: imageView.frame.maxY - 200, width: imageView.width, height: 180))
+        label.text = dataArray[indexPath.item].description
+        label.textColor = UIColor.red
+        label.numberOfLines = 0
+        label.textAlignment = NSTextAlignment.right
+        cell.contentView.addSubview(label)
+        
         
         return cell
     }
@@ -121,6 +129,10 @@ class CustomCollectionViewLayout: UICollectionViewFlowLayout {
             let width = ((collectionView?.width)! - 4*kItemSpace)
             return width
         }
+    }
+    
+    override func prepare() {
+        
     }
     
     // 实现自定义布局需要继承UICollectionViewLayout，同时还要重载下面的三个方法
@@ -154,12 +166,37 @@ class CustomCollectionViewLayout: UICollectionViewFlowLayout {
         
         let collectionView = self.collectionView
         
-        let width : CGFloat = self.width
+        let layoutAttributesWidth : CGFloat = self.width - kItemSpace
         let x : CGFloat = width * CGFloat(indexPath.item) + kItemSpace
-        let height : CGFloat = (collectionView?.height)!
+        let layoutAttributesHeight : CGFloat = (collectionView?.height)!
 
         let layoutAttributes = UICollectionViewLayoutAttributes(forCellWith:indexPath)
-        layoutAttributes.frame = CGRect.init(x: x, y: 0, width: width - kItemSpace, height: height)
+        layoutAttributes.frame = CGRect.init(x: x, y: 0, width: layoutAttributesWidth, height: layoutAttributesHeight)
+        
+        // contentOffSet
+        let contentOffSet : CGPoint = (collectionView?.contentOffset)!
+        
+        //
+        let apart = abs(x - contentOffSet.x)
+        
+        if(apart < (collectionView?.width)!){
+
+            var rotate : CGFloat = 0;
+
+            let collectionViewCenter = collectionView!.center
+            let cellCenter = x + layoutAttributesWidth / 2.0
+            
+            rotate = (cellCenter - collectionViewCenter.x - contentOffSet.x) / (self.width - 4 * kItemSpace)
+            print(rotate)
+            
+            let rotation = CATransform3DMakeRotation(
+                rotate,
+                0,
+                1,
+                0)
+            layoutAttributes.transform3D = rotation
+
+        }
         
         return layoutAttributes
     }
