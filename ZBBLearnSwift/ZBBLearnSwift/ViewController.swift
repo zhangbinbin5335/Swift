@@ -17,9 +17,9 @@ QLPreviewControllerDelegate,
 QLPreviewControllerDataSource{
 
     var tableView : UITableView?
-    var dataSource : NSMutableArray?
+    var dataSource : Array<String>?
     
-    var _fileUrl : NSString?
+    var _fileUrl : String?
     
     
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ QLPreviewControllerDataSource{
                       "Swift_FuncAndClosures"]
     }
     
-    //UITableViewDelegate,UITableViewDataSource
+    // UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "swiftCell")
         if(cell == nil){
@@ -48,7 +48,7 @@ QLPreviewControllerDataSource{
             cell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "swiftCell")
         }
         
-        cell?.textLabel?.text = dataSource?.object(at: indexPath.row) as! String?
+        cell?.textLabel?.text = dataSource?[indexPath.item]
         
         return cell!
     }
@@ -60,14 +60,32 @@ QLPreviewControllerDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView .deselectRow(at: indexPath, animated: false)
         
+        let fileName = dataSource?[indexPath.item]
+        _fileUrl = String.init(format: "http://127.0.0.1:8081/swift/%@", fileName!)
+//        let webVC = WebViewController();
+//        webVC.loadUrl = URL.init(string: _fileUrl!)
+//        self.present(webVC, animated: true, completion: nil)
+        
+        let dataTask = URLSession.shared.dataTask(with: URL.init(string: _fileUrl!)!) { (data, response, error) in
+            if (data != nil){
+                let content = (String.init(data: data!, encoding: String.Encoding.utf8));
+                let textVC = TextViewController();
+                textVC.content = content
+                DispatchQueue.main.async {
+                    self.present(textVC, animated: true, completion: nil)
+                }
+            }
+        }
+        dataTask.resume()
+        
+        return
         let quickLookVC = QLPreviewController.init()
         quickLookVC.dataSource = self
-        quickLookVC.navigationController?.title = dataSource?.object(at: indexPath.row) as! String?
         
-        _fileUrl =
         
-        NSString.init(format: "/Users/zhangbinbin/Documents/daydayup/Swift/%@.playground/Contents.swift",
-                      dataSource?.object(at: indexPath.row) as! CVarArg)
+        quickLookVC.navigationController?.title = fileName
+        
+        _fileUrl = String.init(format: "http://127.0.0.1:8081/swift/%@", fileName!)
         
         self.navigationController?.pushViewController(quickLookVC, animated: true)
     }
@@ -78,10 +96,7 @@ QLPreviewControllerDataSource{
     }
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-        if (_fileUrl?.hasPrefix("file://"))! {
-            return NSURL.init(string: _fileUrl as! String)!
-        }
-        return NSURL.fileURL(withPath: _fileUrl as! String) as QLPreviewItem
+        return NSURL.init(string: _fileUrl! as String)!
     }
 
 }

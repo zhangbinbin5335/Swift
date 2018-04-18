@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43460EF0208748C2002831C8 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43460EEF208748C2002831C8 /* TextViewController.swift */; };
+		4349C29F20844D510080E80F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349C29E20844D510080E80F /* WebViewController.swift */; };
+		4349C2ED2084A6D30080E80F /* ZBBRunShell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4349C2EB2084A6D30080E80F /* ZBBRunShell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4349C2F02084A6D30080E80F /* ZBBRunShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4349C2E92084A6D30080E80F /* ZBBRunShell.framework */; };
+		4349C2F12084A6D30080E80F /* ZBBRunShell.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4349C2E92084A6D30080E80F /* ZBBRunShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4349C2F72084A74C0080E80F /* ZBBRunShellManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4349C2F52084A74C0080E80F /* ZBBRunShellManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4349C2F82084A74C0080E80F /* ZBBRunShellManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4349C2F62084A74C0080E80F /* ZBBRunShellManager.m */; };
+		4349C2F92084A8590080E80F /* NodeService.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4349C2D22084A1A20080E80F /* NodeService.sh */; };
 		439545021E50A6B500F97267 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439545011E50A6B500F97267 /* AppDelegate.swift */; };
 		439545041E50A6B500F97267 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439545031E50A6B500F97267 /* ViewController.swift */; };
 		439545071E50A6B500F97267 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 439545051E50A6B500F97267 /* Main.storyboard */; };
@@ -19,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4349C2EE2084A6D30080E80F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 439544F61E50A6B500F97267 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4349C2E82084A6D30080E80F;
+			remoteInfo = ZBBRunShell;
+		};
 		439545161E50A6B500F97267 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 439544F61E50A6B500F97267 /* Project object */;
@@ -35,7 +50,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4349C2D020849E850080E80F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4349C2F12084A6D30080E80F /* ZBBRunShell.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		43460EEF208748C2002831C8 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		4349C29E20844D510080E80F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		4349C2D22084A1A20080E80F /* NodeService.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = NodeService.sh; sourceTree = "<group>"; };
+		4349C2E92084A6D30080E80F /* ZBBRunShell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZBBRunShell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4349C2EB2084A6D30080E80F /* ZBBRunShell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBBRunShell.h; sourceTree = "<group>"; };
+		4349C2EC2084A6D30080E80F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4349C2F52084A74C0080E80F /* ZBBRunShellManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBBRunShellManager.h; sourceTree = "<group>"; };
+		4349C2F62084A74C0080E80F /* ZBBRunShellManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBBRunShellManager.m; sourceTree = "<group>"; };
+		4349C2FB2084B1C10080E80F /* ZBBLearnSwift-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZBBLearnSwift-Swift.h"; sourceTree = "<group>"; };
 		439544FE1E50A6B500F97267 /* ZBBLearnSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZBBLearnSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439545011E50A6B500F97267 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		439545031E50A6B500F97267 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,10 +92,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4349C2E52084A6D30080E80F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		439544FB1E50A6B500F97267 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4349C2F02084A6D30080E80F /* ZBBRunShell.framework in Frameworks */,
 				439545361E50ADEB00F97267 /* QuickLook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,12 +125,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4349C2EA2084A6D30080E80F /* ZBBRunShell */ = {
+			isa = PBXGroup;
+			children = (
+				4349C2D22084A1A20080E80F /* NodeService.sh */,
+				4349C2EB2084A6D30080E80F /* ZBBRunShell.h */,
+				4349C2F52084A74C0080E80F /* ZBBRunShellManager.h */,
+				4349C2F62084A74C0080E80F /* ZBBRunShellManager.m */,
+				4349C2EC2084A6D30080E80F /* Info.plist */,
+			);
+			path = ZBBRunShell;
+			sourceTree = "<group>";
+		};
 		439544F51E50A6B500F97267 = {
 			isa = PBXGroup;
 			children = (
 				439545001E50A6B500F97267 /* ZBBLearnSwift */,
 				439545181E50A6B500F97267 /* ZBBLearnSwiftTests */,
 				439545231E50A6B500F97267 /* ZBBLearnSwiftUITests */,
+				4349C2EA2084A6D30080E80F /* ZBBRunShell */,
 				439544FF1E50A6B500F97267 /* Products */,
 				439545341E50ADEB00F97267 /* Frameworks */,
 			);
@@ -96,6 +155,7 @@
 				439544FE1E50A6B500F97267 /* ZBBLearnSwift.app */,
 				439545151E50A6B500F97267 /* ZBBLearnSwiftTests.xctest */,
 				439545201E50A6B500F97267 /* ZBBLearnSwiftUITests.xctest */,
+				4349C2E92084A6D30080E80F /* ZBBRunShell.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +165,9 @@
 			children = (
 				439545011E50A6B500F97267 /* AppDelegate.swift */,
 				439545031E50A6B500F97267 /* ViewController.swift */,
+				4349C29E20844D510080E80F /* WebViewController.swift */,
+				43460EEF208748C2002831C8 /* TextViewController.swift */,
+				4349C2FB2084B1C10080E80F /* ZBBLearnSwift-Swift.h */,
 				439545051E50A6B500F97267 /* Main.storyboard */,
 				4395450B1E50A6B500F97267 /* Assets.xcassets */,
 				4395450D1E50A6B500F97267 /* LaunchScreen.storyboard */,
@@ -142,7 +205,37 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		4349C2E62084A6D30080E80F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4349C2F72084A74C0080E80F /* ZBBRunShellManager.h in Headers */,
+				4349C2ED2084A6D30080E80F /* ZBBRunShell.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		4349C2E82084A6D30080E80F /* ZBBRunShell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4349C2F22084A6D30080E80F /* Build configuration list for PBXNativeTarget "ZBBRunShell" */;
+			buildPhases = (
+				4349C2E42084A6D30080E80F /* Sources */,
+				4349C2E52084A6D30080E80F /* Frameworks */,
+				4349C2E62084A6D30080E80F /* Headers */,
+				4349C2E72084A6D30080E80F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZBBRunShell;
+			productName = ZBBRunShell;
+			productReference = 4349C2E92084A6D30080E80F /* ZBBRunShell.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		439544FD1E50A6B500F97267 /* ZBBLearnSwift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 439545291E50A6B500F97267 /* Build configuration list for PBXNativeTarget "ZBBLearnSwift" */;
@@ -150,10 +243,13 @@
 				439544FA1E50A6B500F97267 /* Sources */,
 				439544FB1E50A6B500F97267 /* Frameworks */,
 				439544FC1E50A6B500F97267 /* Resources */,
+				4349C2A0208495150080E80F /* Run Script */,
+				4349C2D020849E850080E80F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4349C2EF2084A6D30080E80F /* PBXTargetDependency */,
 			);
 			name = ZBBLearnSwift;
 			productName = ZBBLearnSwift;
@@ -206,6 +302,10 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = zhangbinbin;
 				TargetAttributes = {
+					4349C2E82084A6D30080E80F = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
 					439544FD1E50A6B500F97267 = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
@@ -238,11 +338,20 @@
 				439544FD1E50A6B500F97267 /* ZBBLearnSwift */,
 				439545141E50A6B500F97267 /* ZBBLearnSwiftTests */,
 				4395451F1E50A6B500F97267 /* ZBBLearnSwiftUITests */,
+				4349C2E82084A6D30080E80F /* ZBBRunShell */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4349C2E72084A6D30080E80F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4349C2F92084A8590080E80F /* NodeService.sh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		439544FC1E50A6B500F97267 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,14 +378,41 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4349C2A0208495150080E80F /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		4349C2E42084A6D30080E80F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4349C2F82084A74C0080E80F /* ZBBRunShellManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		439544FA1E50A6B500F97267 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43460EF0208748C2002831C8 /* TextViewController.swift in Sources */,
 				439545041E50A6B500F97267 /* ViewController.swift in Sources */,
 				439545021E50A6B500F97267 /* AppDelegate.swift in Sources */,
 				4395450A1E50A6B500F97267 /* ZBBLearnSwift.xcdatamodeld in Sources */,
+				4349C29F20844D510080E80F /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +435,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4349C2EF2084A6D30080E80F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4349C2E82084A6D30080E80F /* ZBBRunShell */;
+			targetProxy = 4349C2EE2084A6D30080E80F /* PBXContainerItemProxy */;
+		};
 		439545171E50A6B500F97267 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 439544FD1E50A6B500F97267 /* ZBBLearnSwift */;
@@ -331,6 +472,74 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4349C2F32084A6D30080E80F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ZBBRunShell/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com..ZBBRunShell;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4349C2F42084A6D30080E80F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ZBBRunShell/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com..ZBBRunShell;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		439545271E50A6B500F97267 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -426,6 +635,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ZBBLearnSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eengoo.ZBBLearnSwift;
@@ -438,6 +648,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ZBBLearnSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eengoo.ZBBLearnSwift;
@@ -503,6 +714,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4349C2F22084A6D30080E80F /* Build configuration list for PBXNativeTarget "ZBBRunShell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4349C2F32084A6D30080E80F /* Debug */,
+				4349C2F42084A6D30080E80F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		439544F91E50A6B500F97267 /* Build configuration list for PBXProject "ZBBLearnSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -519,6 +739,7 @@
 				4395452B1E50A6B500F97267 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4395452C1E50A6B500F97267 /* Build configuration list for PBXNativeTarget "ZBBLearnSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +748,7 @@
 				4395452E1E50A6B500F97267 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4395452F1E50A6B500F97267 /* Build configuration list for PBXNativeTarget "ZBBLearnSwiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +757,7 @@
 				439545311E50A6B500F97267 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
